@@ -1,5 +1,4 @@
-import axios from "axios";
-const API = axios.create({ baseURL: "http://localhost:5000/api/progress" });
+import API from "../api/api";
 
 API.interceptors.request.use((req) => {
   const token = localStorage.getItem("token");
@@ -7,6 +6,6 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
-export const getProgress = () => API.get("/");
-export const addProgress = (data) => API.post("/", data);
-export const updateProgressStatus = (id, data) => API.put(`/${id}/status`, data);
+export const getProgress = () => API.get("/progress");
+export const addProgress = (data) => API.post("/progress", data);
+export const updateProgressStatus = (id, data) => API.put(`/progress/${id}/status`, data);

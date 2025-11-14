@@ -13,7 +13,7 @@ import Projects from "./pages/Projects";
 import Employees from "./pages/Employees";
 import ProgressAdmin from "./pages/ProgressAdmin";
 
-// ✅ Tambahan Tahap 5 (Admin)
+//  Tambahan Tahap 5 (Admin)
 import DashboardAnalytics from "./pages/DashboardAnalytics";
 import UploadDokumen from "./pages/UploadDokumen";
 import LaporanKeuangan from "./pages/LaporanKeuangan";
@@ -22,7 +22,7 @@ import DetailProyek from "./pages/DetailProyek";
 // ===== Halaman Employee =====
 import ProgressEmployee from "./pages/ProgressEmployee";
 
-// ✅ Tambahan Fitur Absensi
+//  Tambahan Fitur Absensi
 import AbsenAdmin from "./pages/AbsenAdmin";
 import AbsenKaryawan from "./pages/AbsenKaryawan";
 
@@ -38,13 +38,13 @@ const App = () => (
         <Route path="employees" element={<Employees />} />
         <Route path="progress" element={<ProgressAdmin />} />
 
-        {/* ✅ Fitur Baru */}
+        {/*  Fitur Baru */}
         <Route path="analytics" element={<DashboardAnalytics />} />
         <Route path="uploads" element={<UploadDokumen />} />
         <Route path="finance" element={<LaporanKeuangan />} />
         <Route path="project-detail" element={<DetailProyek />} />
 
-        {/* 🆕 Halaman Absensi Admin */}
+        {/*  Halaman Absensi Admin */}
         <Route path="absensi" element={<AbsenAdmin />} />
       </Route>
 
@@ -53,7 +53,7 @@ const App = () => (
         <Route path="dashboard" element={<Projects />} />
         <Route path="progress" element={<ProgressEmployee />} />
 
-        {/* 🆕 Halaman Absensi Karyawan */}
+        {/*  Halaman Absensi Karyawan */}
         <Route path="absensi" element={<AbsenKaryawan />} />
       </Route>
     </Routes>

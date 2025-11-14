@@ -1,16 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
+import API from "../api/api";
 
 const FileUploader = ({ projectId = null, progressId = null, onUploaded, type = "absen" }) => {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
-
-  const API = axios.create({ baseURL: "http://localhost:5000/api/files" });
-  API.interceptors.request.use((req) => {
-    const t = localStorage.getItem("token");
-    if (t) req.headers.Authorization = `Bearer ${t}`;
-    return req;
-  });
 
   const submit = async (e) => {
     e.preventDefault();

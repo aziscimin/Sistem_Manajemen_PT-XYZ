@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getProjects, createProject, deleteProject } from "../api/project";
 import { getProgress } from "../api/progress"; // ✅ ambil progress juga
-import axios from "axios";
+import API from "../api/api";
 import ProjectForm from "./ProjectForm";
 import Header from "../components/Header";
 import DetailProyek from "./DetailProyek";
-
-const API = axios.create({ baseURL: "http://localhost:5000/api" });
-API.interceptors.request.use((req) => {
-  const token = localStorage.getItem("token");
-  if (token) req.headers.Authorization = `Bearer ${token}`;
-  return req;
-});
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);

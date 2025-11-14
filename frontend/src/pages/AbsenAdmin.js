@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import API from "../api/api";
 
-const API = axios.create({ baseURL: "http://localhost:5000/api/files" });
 API.interceptors.request.use((req) => {
   const token = localStorage.getItem("token");
   if (token) req.headers.Authorization = `Bearer ${token}`;
@@ -12,12 +11,12 @@ const AbsenAdmin = () => {
   const [files, setFiles] = useState([]);
 
   const fetchFiles = async () => {
-    const res = await API.get("/?type=absen");
+    const res = await API.get("/files/?type=absen");
     setFiles(res.data);
   };
 
   const verifyFile = async (id) => {
-    await API.put(`/${id}/verify`);
+    await API.put(`/files/${id}/verify`);
     fetchFiles();
   };
 

@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useCallback } from "react";
-import axios from "axios";
+import API from "../api/api";
 
 const NotificationBell = () => {
   const [items, setItems] = useState([]);
-  const API = axios.create({ baseURL: "http://localhost:5000/api/notifications" });
   API.interceptors.request.use((req) => {
     const t = localStorage.getItem("token");
     if (t) req.headers.Authorization = `Bearer ${t}`;

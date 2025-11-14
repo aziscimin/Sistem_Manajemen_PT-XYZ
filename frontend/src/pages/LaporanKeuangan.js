@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useCallback } from "react";
-import axios from "axios";
+import API from "../api/api";
 import Header from "../components/Header";
 import Card from "../components/ChartCard";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 
-const API = axios.create({ baseURL: "http://localhost:5000/api" });
 API.interceptors.request.use((req) => {
   const t = localStorage.getItem("token");
   if (t) req.headers.Authorization = `Bearer ${t}`;

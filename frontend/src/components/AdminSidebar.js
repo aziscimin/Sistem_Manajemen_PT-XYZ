@@ -44,10 +44,6 @@ const AdminSidebar = () => {
           💰 <span>Laporan Keuangan</span>
         </NavLink>
 
-        <NavLink to="/admin/project-detail" className={linkClass}>
-          🧾 <span>Detail Proyek</span>
-        </NavLink>
-
         {/* 🆕 Tambahan menu absensi */}
         <NavLink to="/admin/absensi" className={linkClass}>
           📸 <span>Verifikasi Absensi</span>
